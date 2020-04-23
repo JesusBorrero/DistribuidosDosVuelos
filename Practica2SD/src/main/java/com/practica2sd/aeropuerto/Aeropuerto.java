@@ -7,17 +7,26 @@ import javax.persistence.Id;
 
 @Entity
 public class Aeropuerto {
+    /* Id autogenerado para la base de datos */
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
+    /* Código del aeropuerto, compuesto por 4 letras mayúsculas y un nombre, que empezará
+       con el nombre de la ciudad, seguido, cuando existan varios aeropuertos en una misma ciudad, del nombre
+       del aeropuerto */
+
     private String codigo;
+
+    /* CONSTRUCTORES */
 
     public Aeropuerto() {}
 
     public Aeropuerto(String codigo){
         this.codigo = codigo;
     }
+
+    /* GETTERS Y SETTERS */
 
     public long getId() {
         return id;

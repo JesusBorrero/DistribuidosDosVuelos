@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Optional;
 
+/* Controlador para las acciones que se realizan sobre las compañías */
+
 @Controller
 @RequestMapping("/compania")
 public class CompaniaControlador extends GeneralController {
 
+    /* Método que devuelve la información de una compañía dado su id */
     @GetMapping("/{id}")
     public ResponseEntity<Compania> getCompania(@PathVariable long id){
         Optional<Compania> compania = this.companiaRepositorio.findById(id);

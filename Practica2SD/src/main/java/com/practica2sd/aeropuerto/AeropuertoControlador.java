@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
+/* Controlador para las acciones que se realizan sobre los aeropuertos */
+
 @Controller
 @RequestMapping("/aeropuerto")
 public class AeropuertoControlador extends GeneralController {
 
+    /* Método que devuelve la información de todos los aeropuertos */
     @GetMapping("/")
     public ResponseEntity<List<Aeropuerto>> getAeropuertos(){
         return new ResponseEntity<>(this.aeropuertoRepositorio.findAll(), HttpStatus.OK);

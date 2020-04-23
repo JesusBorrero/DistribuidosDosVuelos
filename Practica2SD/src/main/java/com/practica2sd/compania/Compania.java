@@ -7,15 +7,20 @@ import javax.persistence.Id;
 
 @Entity
 public class Compania {
+    /* Id autogenerado para la base de datos */
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
     private String nombre;
+
+    /* Código compuesto por dos letras mayúculas (código IATA)  */
     private String codigo;
     private String web;
     private String numeroTelefono;
     private int valoracion;
+
+    /* CONSTRUCTORES */
 
     public Compania() {}
 
@@ -26,6 +31,8 @@ public class Compania {
         this.numeroTelefono = numeroTelefono;
         this.valoracion = valoracion;
     }
+
+    /* GETTERS Y SETTERS */
 
     public long getId() {
         return id;

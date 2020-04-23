@@ -9,24 +9,31 @@ import java.sql.Time;
 
 @Entity
 public class Vuelo {
+    /* Id autogenerado para la base de datos */
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
+    /* Código de vuelo compuesto por las letras de la compañía aérea y 4 dígitos */
     private String codigoVuelo;
     private Date fechaSalida;
     private Time horaSalida;
     private double duracionHoras;
     private int precio;
 
+    /* Compañía del vuelo */
     @ManyToOne
     private Compania compania;
 
+    /* Aeropuerto origen */
     @ManyToOne
     private Aeropuerto origen;
 
+    /* Aeropuerto destino */
     @ManyToOne
     private Aeropuerto destino;
+
+    /* CONSTRUCTORES */
 
     public Vuelo() {}
 
@@ -40,6 +47,8 @@ public class Vuelo {
         this.origen = origen;
         this.destino = destino;
     }
+
+    /* GETTERS Y SETTERS */
 
     public long getId() {
         return id;
