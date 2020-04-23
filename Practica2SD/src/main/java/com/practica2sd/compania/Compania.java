@@ -17,6 +17,8 @@ public class Compania {
     private String numeroTelefono;
     private int valoracion;
 
+    public Compania() {}
+
     public Compania(String nombre, String codigo, String web, String numeroTelefono, int valoracion) {
         this.nombre = nombre;
         this.codigo = codigo;

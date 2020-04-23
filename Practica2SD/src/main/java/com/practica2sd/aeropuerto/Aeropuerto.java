@@ -13,6 +13,8 @@ public class Aeropuerto {
 
     private String codigo;
 
+    public Aeropuerto() {}
+
     public Aeropuerto(String codigo){
         this.codigo = codigo;
     }

@@ -1,9 +1,9 @@
 package com.practica2sd.vuelo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.practica2sd.aeropuerto.Aeropuerto;
+import com.practica2sd.compania.Compania;
+
+import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
 
@@ -19,12 +19,26 @@ public class Vuelo {
     private double duracionHoras;
     private int precio;
 
-    public Vuelo(String codigoVuelo, Date fechaSalida, Time horaSalida, double duracionHoras, int precio) {
+    @ManyToOne
+    private Compania compania;
+
+    @ManyToOne
+    private Aeropuerto origen;
+
+    @ManyToOne
+    private Aeropuerto destino;
+
+    public Vuelo() {}
+
+    public Vuelo(String codigoVuelo, Date fechaSalida, Time horaSalida, double duracionHoras, int precio, Compania compania, Aeropuerto origen, Aeropuerto destino) {
         this.codigoVuelo = codigoVuelo;
         this.fechaSalida = fechaSalida;
         this.horaSalida = horaSalida;
         this.duracionHoras = duracionHoras;
         this.precio = precio;
+        this.compania = compania;
+        this.origen = origen;
+        this.destino = destino;
     }
 
     public long getId() {
@@ -73,5 +87,29 @@ public class Vuelo {
 
     public void setPrecio(int precio) {
         this.precio = precio;
+    }
+
+    public Compania getCompania() {
+        return compania;
+    }
+
+    public void setCompania(Compania compania) {
+        this.compania = compania;
+    }
+
+    public Aeropuerto getOrigen() {
+        return origen;
+    }
+
+    public void setOrigen(Aeropuerto origen) {
+        this.origen = origen;
+    }
+
+    public Aeropuerto getDestino() {
+        return destino;
+    }
+
+    public void setDestino(Aeropuerto destino) {
+        this.destino = destino;
     }
 }
