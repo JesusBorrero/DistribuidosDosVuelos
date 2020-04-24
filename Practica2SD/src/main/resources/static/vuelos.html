@@ -6,16 +6,18 @@
 
     <!--     SCRIPTS     -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="./assets/js/vuelos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
     <!--     ESTILOS     -->
     <link href="./assets/css/style.css" rel="stylesheet" />
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+          rel = "stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -32,14 +34,42 @@
         <label for="diaSalida">Día de salida:</label>
         <input class="form-control" type='text' id="diaSalida" name='diaSalida' placeholder="Dia salida"
                required="required"/>
+
+        <div class="input-dia-retorno" id="divDiaRetorno">
+            <label for="diaRetorno">Día de retorno:</label>
+            <input type=text class="form-control" id="diaRetorno" name='diaRetorno' placeholder="Dia retorno"
+                   required="required"/>
+        </div>
     </div>
 </form>
+
+<div class="boton-ida-vuelta">
+    <label>
+        <input type="checkbox" id="ida-vuelta-check" onclick="checkIdaVuelta()">
+        <span>Ida y Vuelta</span>
+    </label>
+</div>
 
 <div class="text-center">
     <button class="btn btn-primary center-block" onclick="busquedaVuelos()">Buscar</button>
 </div>
 
 <div id="resultadoVuelos"></div>
+
+<div class="container div-resultados-ida-vuelta" id="div-resultados-ida-vuelta">
+    <div class="row">
+        <div class="col" id="resultadoVuelosIda">
+            <h3>Vuelos de ida</h3>
+        </div>
+        <div class="col" id="resultadoVuelosVuelta">
+            <h3>Vuelos de vuelta</h3>
+        </div>
+    </div>
+</div>
+
+<div id="precioTotal"></div>
+
+<div id="dialogoCompania"></div>
 
 </body>
 </html>

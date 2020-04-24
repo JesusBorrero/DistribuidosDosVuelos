@@ -44,9 +44,12 @@ public class InicializadorDatabase {
                     aeropuerto1, aeropuerto2);
             Vuelo vuelo2 = new Vuelo("Iberia0002", new Date(fecha.parse("31/05/2020").getTime()), Time.valueOf("15:00:00"), 2.5, 120, compania1,
                     aeropuerto1, aeropuerto2);
+            Vuelo vuelo3 = new Vuelo("Iberia0003", new Date(fecha.parse("31/05/2020").getTime()), Time.valueOf("15:00:00"), 2.5, 120, compania1,
+                    aeropuerto2, aeropuerto1);
 
             vueloRepositorio.save(vuelo1);
             vueloRepositorio.save(vuelo2);
+            vueloRepositorio.save(vuelo3);
         } catch (ParseException e){
             e.printStackTrace();
         }
