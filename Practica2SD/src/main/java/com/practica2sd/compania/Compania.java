@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Compania {
     /* Id autogenerado para la base de datos */
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
 
     private String nombre;
@@ -24,9 +24,9 @@ public class Compania {
 
     public Compania() {}
 
-    public Compania(String nombre, String codigo, String web, String numeroTelefono, int valoracion) {
-        this.nombre = nombre;
+    public Compania(String codigo, String nombre, String web, String numeroTelefono, int valoracion) {
         this.codigo = codigo;
+        this.nombre = nombre;
         this.web = web;
         this.numeroTelefono = numeroTelefono;
         this.valoracion = valoracion;

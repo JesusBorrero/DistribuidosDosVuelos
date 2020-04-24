@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Aeropuerto {
     /* Id autogenerado para la base de datos */
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
 
     /* Código del aeropuerto, compuesto por 4 letras mayúsculas y un nombre, que empezará

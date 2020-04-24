@@ -1,21 +1,20 @@
 package com.practica2sd.compania;
 
-import com.practica2sd.GeneralController;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 /* Controlador para las acciones que se realizan sobre las compañías */
 
-@Controller
+@RestController
 @RequestMapping("/compania")
-public class CompaniaControlador extends GeneralController {
+public class CompaniaControlador {
+
+    @Autowired
+    protected CompaniaRepositorio companiaRepositorio;
 
     /* Método que devuelve la información de una compañía dado su id */
     @CrossOrigin

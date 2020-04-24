@@ -11,7 +11,7 @@ import java.sql.Time;
 public class Vuelo {
     /* Id autogenerado para la base de datos */
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
 
     /* Código de vuelo compuesto por las letras de la compañía aérea y 4 dígitos */
