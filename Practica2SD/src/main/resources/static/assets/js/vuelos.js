@@ -185,6 +185,7 @@ function checkIdaVuelta(){
 
 // Seleccionar vuelos y calcular precio total
 function seleccionVuelo(tipo, precioVuelo, companiaVuelo){
+    $("#precioTotal").empty();
     seleccionVuelosPrecio.set(tipo, precioVuelo);
     seleccionVuelosCompania.set(tipo, companiaVuelo);
 
