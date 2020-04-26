@@ -1,50 +1,61 @@
-.form-vuelos{
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-top: 1rem;
+.form-vuelos {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
 }
 
-.sin-resultados{
+.bold {
+    font-weight: bold;
+}
+
+.sin-resultados {
     color: gray;
     text-align: center;
     margin-top: 1rem;
 }
 
-.card-info-vuelo{
-    margin-left: 1rem;
-    margin-right: 1rem;
+.card-info-vuelo {
+    margin-left: 2%;
+    margin-right: 2%;
     margin-top: 2rem;
 }
 
-.nombre-compania{
+.nombre-compania {
     cursor: pointer;
 }
 
-.nombre-compania:hover{
+.nombre-compania:hover {
     font-weight: bold;
 }
 
-.boton-ida-vuelta{
+.boton-ida-vuelta {
     margin-bottom: 0.5rem;
     align-items: center;
     text-align: center;
     align-content: center;
 }
 
-.input-dia-retorno{
+.input-dia-retorno {
     display: none;
 }
 
-.div-resultados-ida-vuelta{
+.div-resultados-ida-vuelta {
     display: none;
     margin-top: 2rem;
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.vuelo-ida-vuelta:hover{
+.vuelo-ida-vuelta:hover {
     background: aliceblue;
     cursor: pointer;
+}
+
+.precio {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    font-weight: bold;
 }
 
 .ui-autocomplete {
@@ -103,6 +114,7 @@
     background: url("http://code.jquery.com/ui/1.10.3/themes/smoothness/images/ui-icons_888888_256x240.png") repeat scroll -93px -128px rgba(0, 0, 0, 0);
     border: medium none;
 }
+
 .ui-dialog-titlebar-close:hover {
     background: url("http://code.jquery.com/ui/1.10.3/themes/smoothness/images/ui-icons_222222_256x240.png") repeat scroll -93px -128px rgba(0, 0, 0, 0);
 }

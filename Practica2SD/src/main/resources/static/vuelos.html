@@ -9,8 +9,9 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="./assets/js/vuelos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <script src="./assets/js/vuelos.js"></script>
 
     <!--     ESTILOS     -->
     <link href="./assets/css/style.css" rel="stylesheet" />
@@ -18,24 +19,28 @@
           rel = "stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 </head>
 <body>
 
 <form>
     <div class="form-group form-vuelos">
-        <label for="aeropuertoOrigen">Aeropuerto origen:</label>
+        <label for="aeropuertoOrigen" class="bold">Aeropuerto origen:</label>
         <input class="form-control" type='text' id="aeropuertoOrigen" name='aeropuertoOrigen' placeholder="Aeropuerto Origen"
                required="required"/>
 
-        <label for="aeropuertoDestino">Aeropuerto destino:</label>
+        <br>
+        <label for="aeropuertoDestino" class="bold">Aeropuerto destino:</label>
         <input class="form-control" type='text' id="aeropuertoDestino" name='aeropuertoDestino' placeholder="Aeropuerto Destino"
                required="required"/>
 
-        <label for="diaSalida">Día de salida:</label>
+        <br>
+        <label for="diaSalida" class="bold">Día de salida:</label>
         <input class="form-control" type='text' id="diaSalida" name='diaSalida' placeholder="Dia salida"
                required="required"/>
 
-        <div class="input-dia-retorno" id="divDiaRetorno">
+        <br>
+        <div class="input-dia-retorno bold" id="divDiaRetorno">
             <label for="diaRetorno">Día de retorno:</label>
             <input type=text class="form-control" id="diaRetorno" name='diaRetorno' placeholder="Dia retorno"
                    required="required"/>
@@ -67,7 +72,7 @@
     </div>
 </div>
 
-<div id="precioTotal"></div>
+<div class="precio" id="precioTotal"></div>
 
 <div id="dialogoCompania"></div>
 

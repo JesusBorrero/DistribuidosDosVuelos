@@ -32,6 +32,20 @@ $(document).ready(function () {
     })
 });
 
+// Calendario para elegir la fecha de salida
+$(function(){
+    $("#diaSalida").datepicker({
+        dateFormat: "yy-mm-dd"
+    });
+});
+
+// Calendario para elegir la fecha de retorno
+$(function(){
+    $("#diaRetorno").datepicker({
+        dateFormat: "yy-mm-dd"
+    });
+});
+
 function busquedaVuelos() {
 
     // Inicialización de los componentes HTML
@@ -148,8 +162,15 @@ function fichaCompania(companiaId){
             draggable: false,
             closeText: ""
         }).append("<p>Compañía: " + compania.nombre + "</p><p>Código: " + compania.codigo + "</p>" +
-            "<p>Teléfono: " + compania.numeroTelefono + "</p><a href='" + compania.web + "'>Sitio web</a>")
+            "<p>Teléfono: " + compania.numeroTelefono + "</p><a href='" + compania.web + "'>Sitio web</a>" +
+            "<p> Valoración: </p><div id=\"rateYo\"></div>")
             .dialog("open");
+
+        $("#rateYo").rateYo({
+            rating: compania.valoracion,
+            readOnly: true
+        });
+
     })
 }
 
