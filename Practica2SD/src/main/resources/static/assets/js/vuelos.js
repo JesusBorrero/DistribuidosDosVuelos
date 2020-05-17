@@ -90,7 +90,7 @@ function busquedaVuelos() {
             } else {
                 // Hay vuelos y no se ha seleccionado ida-vuelta
                 $.each(vuelos, function (index, vuelo) {
-                    $("#resultadoVuelosIda").append("<div class='card card-info-vuelo vuelo-ida-vuelta' onclick='seleccionVuelo(\"ida\", "+ vuelo.precio +", \"" + vuelo.compania.codigo + "\")'>" +
+                    $("#resultadoVuelosIda").append("<div class='card card-info-vuelo vuelo-ida-vuelta' id= \"" + vuelo.codigoVuelo + "\" onclick='seleccionVuelo(\"ida\", "+ vuelo.precio +", \"" + vuelo.compania.codigo + "\", \""+ vuelo.codigoVuelo +"\")'>" +
                         "<div class='card-body'><h3>Vuelo " + vuelo.codigoVuelo + "</h3>" +
                         "<p>Precio: " + vuelo.precio + " euros</p><p>Compañía: <span class='nombre-compania' onclick='fichaCompania(" + vuelo.compania.id + ")'>"
                         + vuelo.compania.nombre + "</span></p></div></div>");
@@ -122,7 +122,7 @@ function busquedaVuelos() {
             } else {
                 // Hay vuelos para los parámetros dados
                 $.each(vuelos, function (index, vuelo) {
-                    $("#resultadoVuelosVuelta").append("<div class='card card-info-vuelo vuelo-ida-vuelta' onclick='seleccionVuelo(\"vuelta\", "+ vuelo.precio +", \""+ vuelo.compania.codigo + "\")'>" +
+                    $("#resultadoVuelosVuelta").append("<div class='card card-info-vuelo vuelo-ida-vuelta' id= \"" + vuelo.codigoVuelo + "\" onclick='seleccionVuelo(\"vuelta\", "+ vuelo.precio + ", \""+ vuelo.compania.codigo + "\", \""+ vuelo.codigoVuelo +"\")'>" +
                         "<div class='card-body'><h2>Vuelo " + vuelo.codigoVuelo + "</h2>" +
                         "<p>Precio: " + vuelo.precio + " euros</p><p>Compañía: <span class='nombre-compania' onclick='fichaCompania(" + vuelo.compania.id + ")'>"
                         + vuelo.compania.nombre + "</span></p></div></div>");
@@ -184,10 +184,20 @@ function checkIdaVuelta(){
 }
 
 // Seleccionar vuelos y calcular precio total
-function seleccionVuelo(tipo, precioVuelo, companiaVuelo){
+function seleccionVuelo(tipo, precioVuelo, companiaVuelo, codigoVuelo){
     $("#precioTotal").empty();
     seleccionVuelosPrecio.set(tipo, precioVuelo);
     seleccionVuelosCompania.set(tipo, companiaVuelo);
+
+    // Se elimina la seleccion de otros vuelos
+    if(tipo === "ida"){
+        $("#resultadoVuelosIda").children().removeClass("vuelo-seleccionado");
+    } else if (tipo === "vuelta"){
+        $("#resultadoVuelosVuelta").children().removeClass("vuelo-seleccionado");
+    }
+
+    // Se deja seleccionado el vuelo
+    $("#"+ codigoVuelo + "").addClass("vuelo-seleccionado");
 
     // Si se ha seleccionado vuelo de ida y vuelo de vuelta, calcular el precio total
     if(seleccionVuelosPrecio.get("ida") !== undefined && seleccionVuelosPrecio.get("vuelta") !== undefined){
