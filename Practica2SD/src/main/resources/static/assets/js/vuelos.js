@@ -88,16 +88,16 @@ function busquedaVuelos() {
             if(!$("#ida-vuelta-check").prop("checked")) {
                 $.each(vuelos, function (index, vuelo) {
                     $("#resultadoVuelos").append("<div class='card card-info-vuelo'><div class='card-body'><h2>Vuelo " + vuelo.codigoVuelo + "</h2>" +
-                        "<p>Precio: " + vuelo.precio + " euros</p><p>Compañía: <span class='nombre-compania' onclick='fichaCompania(" + vuelo.compania.id + ")'>"
-                        + vuelo.compania.nombre + "</span></p></div></div>");
+                        "<p>Precio: " + vuelo.precio + " euros</p><p>Compañía: <span class='nombre-compania' onclick='fichaCompania(" + vuelo.compania.id + ")'>" +
+                        "<u>" + vuelo.compania.nombre + "</u></span></p></div></div>");
                 });
             } else {
                 // Hay vuelos y no se ha seleccionado ida-vuelta
                 $.each(vuelos, function (index, vuelo) {
                     $("#resultadoVuelosIda").append("<div class='card card-info-vuelo vuelo-ida-vuelta' id= \"" + vuelo.codigoVuelo + "\" onclick='seleccionVuelo(\"ida\", "+ vuelo.precio +", \"" + vuelo.compania.codigo + "\", \""+ vuelo.codigoVuelo +"\")'>" +
                         "<div class='card-body'><h3>Vuelo " + vuelo.codigoVuelo + "</h3>" +
-                        "<p>Precio: " + vuelo.precio + " euros</p><p>Compañía: <span class='nombre-compania' onclick='fichaCompania(" + vuelo.compania.id + ")'>"
-                        + vuelo.compania.nombre + "</span></p></div></div>");
+                        "<p>Precio: " + vuelo.precio + " euros</p><p>Compañía: <span class='nombre-compania' onclick='fichaCompania(" + vuelo.compania.id + ")'>" +
+                        "<u>" + vuelo.compania.nombre + "</u></span></p></div></div>");
                 });
             }
         }
@@ -211,9 +211,9 @@ function seleccionVuelo(tipo, precioVuelo, companiaVuelo, codigoVuelo){
         // Si ambos vuelos pertenecen a la misma compañia, aplicar descuento
         if(seleccionVuelosCompania.get("ida") === seleccionVuelosCompania.get("vuelta")){
             precioTotal = precioTotal - precioTotal * 0.2;
-            $("#precioTotal").append("<p>El precio total (reducido en 20%) es de: " + precioTotal + "</p>")
+            $("#precioTotal").append("<div class='alert alert-success'><strong>El precio total (reducido en 20%)</strong> es de: " + precioTotal + " euros</div>")
         } else {
-            $("#precioTotal").append("<p>El precio total es de: " + precioTotal + "</p>");
+            $("#precioTotal").append("<div class='alert alert-success'><strong>El precio total</strong> es de: " + precioTotal + " euros</div>");
         }
 
     }

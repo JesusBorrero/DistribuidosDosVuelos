@@ -42,13 +42,13 @@ public class InicializadorDatabase {
         Compania compania2 = new Compania("FE", "Fly Emirates", "https://www.emirates.com/es/spanish/", "912 75 77 92", 4);
         companiaRepositorio.save(compania2);
         try {
-            Vuelo vuelo1 = new Vuelo("IB0001", new Date(fecha.parse("31/05/2020").getTime()), Time.valueOf("12:00:00"), 2.5, 100, compania1,
+            Vuelo vuelo1 = new Vuelo("IB0001", new Date(fecha.parse("30/06/2020").getTime()), Time.valueOf("12:00:00"), 2.5, 100, compania1,
                     aeropuerto1, aeropuerto2);
-            Vuelo vuelo2 = new Vuelo("IB0002", new Date(fecha.parse("31/05/2020").getTime()), Time.valueOf("15:00:00"), 2.5, 120, compania1,
+            Vuelo vuelo2 = new Vuelo("IB0002", new Date(fecha.parse("30/06/2020").getTime()), Time.valueOf("15:00:00"), 2.5, 120, compania1,
                     aeropuerto1, aeropuerto2);
-            Vuelo vuelo3 = new Vuelo("IB0003", new Date(fecha.parse("31/05/2020").getTime()), Time.valueOf("15:00:00"), 2.5, 120, compania1,
+            Vuelo vuelo3 = new Vuelo("IB0003", new Date(fecha.parse("30/06/2020").getTime()), Time.valueOf("15:00:00"), 2.5, 120, compania1,
                     aeropuerto2, aeropuerto1);
-            Vuelo vuelo4 = new Vuelo("FE0004", new Date(fecha.parse("31/05/2020").getTime()), Time.valueOf("15:00:00"), 2.5, 140, compania2,
+            Vuelo vuelo4 = new Vuelo("FE0004", new Date(fecha.parse("30/06/2020").getTime()), Time.valueOf("15:00:00"), 2.5, 140, compania2,
                     aeropuerto2, aeropuerto1);
 
             vueloRepositorio.save(vuelo1);
