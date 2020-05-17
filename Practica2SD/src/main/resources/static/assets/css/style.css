@@ -58,6 +58,10 @@
     font-weight: bold;
 }
 
+.vuelo-seleccionado {
+    background-color: lightblue!important;
+}
+
 .ui-autocomplete {
     position: absolute;
     top: 100%;
