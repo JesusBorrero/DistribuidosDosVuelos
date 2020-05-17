@@ -33,16 +33,20 @@ $(document).ready(function () {
 });
 
 // Calendario para elegir la fecha de salida
+var nowDate = new Date();
+var today = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate(), 0, 0, 0, 0);
 $(function(){
     $("#diaSalida").datepicker({
-        dateFormat: "yy-mm-dd"
+        dateFormat: "yy-mm-dd",
+        minDate: today
     });
 });
 
 // Calendario para elegir la fecha de retorno
 $(function(){
     $("#diaRetorno").datepicker({
-        dateFormat: "yy-mm-dd"
+        dateFormat: "yy-mm-dd",
+        minDate: today
     });
 });
 
