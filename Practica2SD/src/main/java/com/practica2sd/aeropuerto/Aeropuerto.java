@@ -18,12 +18,18 @@ public class Aeropuerto {
 
     private String codigo;
 
+    /* Nombre completo del aeropuerto. Será el que se mostrará en el frontend. Permite una mayor accesibilidad y
+    mejor presentación que si se mostrase el código del aeropuerto */
+
+    private String nombre;
+
     /* CONSTRUCTORES */
 
     public Aeropuerto() {}
 
-    public Aeropuerto(String codigo){
+    public Aeropuerto(String codigo, String nombre){
         this.codigo = codigo;
+        this.nombre = nombre;
     }
 
     /* GETTERS Y SETTERS */
@@ -42,5 +48,13 @@ public class Aeropuerto {
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }

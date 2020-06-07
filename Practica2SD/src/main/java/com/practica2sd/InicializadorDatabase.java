@@ -31,8 +31,8 @@ public class InicializadorDatabase {
     public void init() {
         SimpleDateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
 
-        Aeropuerto aeropuerto1 = new Aeropuerto("AAAAMadridBarajas");
-        Aeropuerto aeropuerto2 = new Aeropuerto("BBBBBarcelonaElPrat");
+        Aeropuerto aeropuerto1 = new Aeropuerto("AAAAMadridBarajas-AdolfoSuarez", "Madrid (Barajas-Adolfo Suarez)");
+        Aeropuerto aeropuerto2 = new Aeropuerto("BBBBBarcelonaJosepTarradellasBarcelona-El Prat", "Barcelona (Josep Tarradellas Barcelona-El Prat)");
 
         aeropuertoRepositorio.save(aeropuerto1);
         aeropuertoRepositorio.save(aeropuerto2);

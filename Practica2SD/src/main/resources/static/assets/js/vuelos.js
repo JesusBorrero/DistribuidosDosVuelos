@@ -18,8 +18,8 @@ $(document).ready(function () {
         type: "GET"
     }).done(function (aeropuertos) {
         $.each(aeropuertos, function (index, aeropuerto) {
-            mapaAeropuertos.set(aeropuerto.codigo, aeropuerto.id);
-            opcionesAeropuertos.push(aeropuerto.codigo);
+            mapaAeropuertos.set(aeropuerto.nombre, aeropuerto.id);
+            opcionesAeropuertos.push(aeropuerto.nombre);
         });
 
         $( "#aeropuertoOrigen" ).autocomplete({
