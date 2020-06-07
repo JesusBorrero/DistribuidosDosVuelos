@@ -54,6 +54,7 @@ function busquedaVuelos() {
 
     // Inicialización de los componentes HTML
     $("#resultadoVuelos").html("");
+    $("#precioTotal").html("");
     $("#resultadoVuelosIda").html("<h3>Vuelos de ida</h3>");
     $("#resultadoVuelosVuelta").html("<h3>Vuelos de vuelta</h3>");
     $("#div-resultados-ida-vuelta").hide();
@@ -128,8 +129,8 @@ function busquedaVuelos() {
                 $.each(vuelos, function (index, vuelo) {
                     $("#resultadoVuelosVuelta").append("<div class='card card-info-vuelo vuelo-ida-vuelta' id= \"" + vuelo.codigoVuelo + "\" onclick='seleccionVuelo(\"vuelta\", "+ vuelo.precio + ", \""+ vuelo.compania.codigo + "\", \""+ vuelo.codigoVuelo +"\")'>" +
                         "<div class='card-body'><h2>Vuelo " + vuelo.codigoVuelo + "</h2>" +
-                        "<p>Precio: " + vuelo.precio + " euros</p><p>Compañía: <span class='nombre-compania' onclick='fichaCompania(" + vuelo.compania.id + ")'>"
-                        + vuelo.compania.nombre + "</span></p></div></div>");
+                        "<p>Precio: " + vuelo.precio + " euros</p><p>Compañía: <span class='nombre-compania' onclick='fichaCompania(" + vuelo.compania.id + ")'><u>"
+                        + vuelo.compania.nombre + "</u></span></p></div></div>");
                 });
             }
         });
@@ -211,9 +212,9 @@ function seleccionVuelo(tipo, precioVuelo, companiaVuelo, codigoVuelo){
         // Si ambos vuelos pertenecen a la misma compañia, aplicar descuento
         if(seleccionVuelosCompania.get("ida") === seleccionVuelosCompania.get("vuelta")){
             precioTotal = precioTotal - precioTotal * 0.2;
-            $("#precioTotal").append("<div class='alert alert-success'><strong>El precio total (reducido en 20%)</strong> es de: " + precioTotal + " euros</div>")
+            $("#precioTotal").append("<div class='alert alert-success alerta-precio'><strong>El precio total (reducido en 20%)</strong> es de: " + precioTotal + " euros</div>")
         } else {
-            $("#precioTotal").append("<div class='alert alert-success'><strong>El precio total</strong> es de: " + precioTotal + " euros</div>");
+            $("#precioTotal").append("<div class='alert alert-success alerta-precio'><strong>El precio total</strong> es de: " + precioTotal + " euros</div>");
         }
 
     }
