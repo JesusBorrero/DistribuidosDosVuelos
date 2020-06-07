@@ -1,0 +1,17 @@
+Alejandro Quesada Soto - 53955723T - a.quesadas.2016@alumnos.urjc.es
+En la parte del back, se ocupó de la entidad vuelo y su respectivo controlador. Respecto al front, se ha ocupado del datepicker, 
+su validación y la selección y cálculo del precio del vuelo.
+
+Jesús Borrero Gómez - 02777290V - j.borrerog.2016@alumnos.urjc.es
+En la parte del back, se ocupó de las entidades aeropuerto y compañía y sus respectivos controladores. Respecto al front, se ha ocupado
+del autocompletar, ficha de compañía y búsqueda de vuelos.
+
+Se considera que el trabajo ha sido repartido entre los integrantes y que la carga realizada por cada uno de ellos ha
+sido la misma.
+
+INFORMACIÓN ADICIONAL DE LA PRÁCTICA:
+Los aeropuertos que se encuentran disponibles para la búsqueda son los siguientes:
+ - Madrid (Barajas-Adolfo Suarez)
+ - Barcelona (Josep Tarradellas Barcelona-El Prat)
+
+Por otro lado, la fecha de todos los vuelos es 2020-06-30 para facilitar las búsquedas.
